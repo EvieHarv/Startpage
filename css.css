@@ -21,7 +21,7 @@ body {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     border-radius: 50%;
-    border: 4px solid black;
+    border: 4px solid #141414;
     outline: 2px solid white;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000px);
@@ -31,13 +31,29 @@ body {
     margin: 0px auto;
 }
 
-.plx {
+.circle img {
     position: absolute;
     width: 50%;
     height: 50%;
     top: 50%;
     left: 50%;
-    transform: translateZ(15px) translateX(-50%) translateY(-50%);
+    transform: translateZ(20px) translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+.circle .round{
+    border-radius: 50%;
+}
+
+.plx {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(20px) translateX(-50%) translateY(-50%);
 }
 
 .plx-text {
@@ -48,7 +64,7 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateZ(15px) translate(-50%, -50%);
+    transform: translateZ(20px) translate(-50%, -50%);
 }
 
 .plx-box {
@@ -57,7 +73,7 @@ body {
     height: 50%;
     top: 50%;
     left: 50%;
-    transform: translateZ(15px) translateX(-50%) translateY(-50%);
+    transform: translateZ(20px) translateX(-50%) translateY(-50%);
     background-color: black;
 }
 
@@ -76,11 +92,11 @@ body {
     border-radius: 50%;
 }
 
-.inner-container {
+.planet-container {
+    z-index: 10;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-85%, -55%);
+    top: 16%;
+    left: 16%;
     --d: 5.2em; /* image size */
     --rel: 1.5; /* how much extra space we want between images, 1 = one image size */
     --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
@@ -89,7 +105,7 @@ body {
     width: var(--s); height: var(--s);
 }
   
-.inner-container a {
+.planet-container a {
     max-width: 100%;
     position: absolute;
     top: 50%; left: 50%;
@@ -102,12 +118,41 @@ body {
       rotate(calc(-1*var(--az)))
 }
 
-.inner-container .middle {
+.planet-container .middle {
     --mid: 22em;
     position: absolute;
     top: 52%; left: 52.5%;
     margin: calc(-.5*var(--mid));
     width: var(--mid); height: var(--mid);
+}
+
+.right-side{
+    z-index: 1;
+    position: absolute;
+    padding: 10px;
+    top: 36%;
+    left: 65%;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-color: #141414c0;
+    border-radius: 10px;
+}
+
+.day {
+    text-align: center;
+    font-size: 40px;
+    color: white;
+}
+.clock {
+    text-align: center;
+    font-size: 100px;
+    color: white;
+}
+.weather {
+    text-align: center;
+    font-size: 40px;
+    color: white;
 }
 
 img { max-width: 100% }
