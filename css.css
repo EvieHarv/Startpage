@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #231F20;
+    position: relative;
+}
+
+.container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    margin: 0px auto;
+    background: linear-gradient(135deg, #5DAAC6 , #2E2E33);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    border-radius: 50%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform: perspective(1000px);
+}
+
+.earth {
+    margin: 0px auto;
+}
+
+.plx {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(15px) translateX(-50%) translateY(-50%);
+    box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3);
+    background-color: black;
+}
+
+.plx-text {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform:  translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.js-tilt-glare{
+    border-radius: 50%;
+}
+
+.inner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-85%, -55%);
+    --d: 5em; /* image size */
+    --rel: 1.5; /* how much extra space we want between images, 1 = one image size */
+    --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
+    --s: calc(2*var(--r) + var(--d)); /* container size */
+    position: relative;
+    width: var(--s); height: var(--s);
+}
+  
+.inner-container a {
+    max-width: 100%;
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: calc(-.5*var(--d));
+    width: var(--d); height: var(--d);
+    --az: calc(var(--i)*1turn/var(--m));
+    transform: 
+      rotate(var(--az)) 
+      translate(var(--r))
+      rotate(calc(-1*var(--az)))
+}
+
+.inner-container .middle {
+    --mid: 22em;
+    position: absolute;
+    top: 51.5%; left: 51.5%;
+    margin: calc(-.5*var(--mid));
+    width: var(--mid); height: var(--mid);
+}
+
+img { max-width: 100% }
