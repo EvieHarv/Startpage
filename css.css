@@ -21,6 +21,8 @@ body {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     border-radius: 50%;
+    border: 4px solid black;
+    outline: 2px solid white;
     -webkit-transform-style: preserve-3d;
     -webkit-transform: perspective(1000px);
 }
@@ -36,11 +38,30 @@ body {
     top: 50%;
     left: 50%;
     transform: translateZ(15px) translateX(-50%) translateY(-50%);
-    box-shadow: 0 0 50px 0 rgba(51, 51, 51, 0.3);
-    background-color: black;
 }
 
 .plx-text {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(15px) translate(-50%, -50%);
+}
+
+.plx-box {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translateZ(15px) translateX(-50%) translateY(-50%);
+    background-color: black;
+}
+
+.plx-box-text {
     color: white;
     font-size: 24px;
     margin: 0;
@@ -60,7 +81,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-85%, -55%);
-    --d: 5em; /* image size */
+    --d: 5.2em; /* image size */
     --rel: 1.5; /* how much extra space we want between images, 1 = one image size */
     --r: calc(.5*(1 + var(--rel))*var(--d)/var(--tan)); /* circle radius */
     --s: calc(2*var(--r) + var(--d)); /* container size */
@@ -84,9 +105,18 @@ body {
 .inner-container .middle {
     --mid: 22em;
     position: absolute;
-    top: 51.5%; left: 51.5%;
+    top: 52%; left: 52.5%;
     margin: calc(-.5*var(--mid));
     width: var(--mid); height: var(--mid);
 }
 
 img { max-width: 100% }
+
+.noselect{
+    pointer-events: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
