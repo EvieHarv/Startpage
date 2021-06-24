@@ -52,7 +52,7 @@ function buildCircles()
             span.classList.add('plx-text');
             var text = document.createTextNode(props['text']);
             span.appendChild(text);
-            
+
             circle.appendChild(span);
         }
         
@@ -62,5 +62,8 @@ function buildCircles()
         planetContainer.appendChild(orbit);
     };
 
-    VanillaTilt.init(document.querySelectorAll(".circle"));
+    VanillaTilt.init(document.querySelectorAll(".circle"), {
+        glare : true,
+        "max-glare" : 0.6
+    });
 }

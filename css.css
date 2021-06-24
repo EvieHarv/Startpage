@@ -234,4 +234,12 @@ img { max-width: 100% }
   left: 0px;
   font-size: 36px;
   margin-left: 0px;
-}  
+}
+
+.mobile {
+    width: 100%;
+    height: 100%;
+    font-size: xx-large;
+    text-align: center;
+    color: white;
+}
