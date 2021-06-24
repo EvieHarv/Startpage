@@ -193,20 +193,20 @@ img { max-width: 100% }
 /* w3 code: */
 /* The sidepanel menu */
 .sidepanel {
-  height: 0; /* Specify a height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0;
-  right: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  padding-bottom: 25px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
-  -ms-overflow-style: none; /* for Internet Explorer, Edge */
-  scrollbar-width: none; /* for Firefox */
-  overflow-y: scroll; 
+    height: 0; /* Specify a height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    right: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    padding-bottom: 25px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow: hidden;
 }
 .sidepanel::-webkit-scrollbar {
     display: none; /* for Chrome, Safari, and Opera */
@@ -214,26 +214,36 @@ img { max-width: 100% }
 
 /* The sidepanel links */
 .sidepanel a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidepanel a:hover {
-  color: #f1f1f1;
+    color: #f1f1f1;
 }
 
 /* Position and style the close button (top right corner) */
 .sidepanel .settings-button-close {
-  position: absolute;
-  top: 0;
-  left: 0px;
-  font-size: 36px;
-  margin-left: 0px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    font-size: 36px;
+    margin-left: 0px;
+}
+
+.panel {
+    white-space:nowrap;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;  
 }
 
 .mobile {
@@ -242,4 +252,39 @@ img { max-width: 100% }
     font-size: xx-large;
     text-align: center;
     color: white;
+}
+
+.sortable-drag {
+    opacity: 0;
+}
+
+.link-item{
+    border-radius: 5px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    padding: 2px 2px 4px 2px;
+    margin: 4px 4px 4px 4px;
+    vertical-align: middle;
+}
+
+form{
+    display: inline-block;
+    font-size: 18px;
+}
+
+.textbox{
+    position: relative;
+    top: -2px;
+    width: 250px;
+    height: 25px;
+    background: 0 0;
+    font-size: 15px;
+    color: rgb(175, 175, 175);
+    font-family: Lucida Console;
+    line-height: 1.2;
+    padding: 0 2px;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid rgba(128, 128, 128, 0.05);
+    border-bottom: 1px solid white;
 }

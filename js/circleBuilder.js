@@ -6,7 +6,7 @@ function buildCircles()
         document.querySelectorAll('.circle-orbit').forEach(function(e){ e.remove(); })
     }
 
-    const links = JSON.parse(localStorage.getItem('links'));
+    const links = JSON.parse(localStorage.getItem('userLinks'));
 
     var planetContainer = document.querySelector('.planet-container');
     planetContainer.style.setProperty('--m', links.length);
@@ -35,14 +35,7 @@ function buildCircles()
         {
             // Display as img thumbnail
             var img = document.createElement("img");
-            if (props['img-type'] === "url")
-            {
-                img.src = props['img-loc']
-            }
-            else
-            {
-                // TODO: Local Image Storage
-            };
+            img.src = props['dispText']
             circle.appendChild(img);
         }
         else
@@ -50,7 +43,7 @@ function buildCircles()
             // Display as text
             var span = document.createElement("span");
             span.classList.add('plx-text');
-            var text = document.createTextNode(props['text']);
+            var text = document.createTextNode(props['dispText']);
             span.appendChild(text);
 
             circle.appendChild(span);

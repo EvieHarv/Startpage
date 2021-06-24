@@ -25,40 +25,43 @@
             <img src='./svg/settings-gear.svg'/>
         </div>
         <div id="settings-panel" class="sidepanel">
-            <a href="javascript:void(0)" class="settings-button-close">&times;<span style='color: red; font-size: 15px; padding: 8px 8px 8px 32px; position: absolute;'>Heavily a WIP</span></a>
+            <a href="javascript:void(0)" class="settings-button-close">&times;<span style='color: red; font-size: 15px; padding: 8px 8px 8px 32px; position: absolute; white-space:nowrap;'>Heavily a WIP</span></a>
+            <!-- Main settings page -->
             <div class='settings-panel-main'>
                 <a href="#" class='settings-link-links'>Links</a>
                 <a href="#" class='settings-link-weather'>Weather</a>
                 <a href="#" class='settings-link-colors'>Colors</a>
                 <a href="https://www.ethanharv.com" style='color: green;'>EthanHarv.com</a>    
             </div>
-            <div class='settings-panel-links' style='display: none;'>
-                <div class='settings-panel-main'>
-                    <a href="#" class='settings-link-links'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-weather'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-colors'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-links'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-weather'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-colors'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-links'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-weather'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-colors'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                    <a href="#" class='settings-link-colors'>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-                </div>    
+            <!-- Links -->
+            <div class='settings-panel-links panel' style='display: none;'>
+                Links <span style='font-size: small; color: green; vertical-align: middle;'>(Drag handle to re-order)</span>
+                <hr/>
+                <div class='settings-panel-links-items'>
+                </div>
             </div>
-            <div class='settings-panel-weather' style='display: none;'>
-                Weather!
+            <!-- Weather -->
+            <div class='settings-panel-weather panel' style='display: none;'>
+                <div class='settings-panel-weather-items'>
+
+                </div>
             </div>
-            <div class='settings-panel-colors' style='display: none;'>
-                Colors!
+            <!-- Colors -->
+            <div class='settings-panel-colors panel' style='display: none;'>
+                <div class='settings-panel-colors-items'>
+
+                </div>
             </div>
         </div>
     </div>
     <!-- External Scripts -->
     <script src='https://cdn.jsdelivr.net/npm/p5@1.3.1/lib/p5.js'></script>
-    <script src="./Vanilla-Tilt/VanillaTilt.js"></script>
-    <script src='./js/localForage.js'></script>
-    <script src='./js/particles.js'></script> <!-- This one's a bit of both. -->
+    <!-- I tried to avoid using jQuery, but then I got the form data in settings and couldn't justify it -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js'></script>
+    <script src="./js/Vanilla-Tilt/VanillaTilt.js"></script>
+    <script src="./js/Sortable/Sortable.min.js"></script>
+    <!-- This one's a bit of both. -->
+    <script src='./js/particles.js'></script> 
     <!-- My Own Scripts -->
     <script src='./js/time.js'></script>
     <script src='./js/weather.js'></script>
