@@ -171,3 +171,67 @@ img { max-width: 100% }
     -webkit-user-select: none;
     -ms-user-select: none;
 }
+
+
+.hover-hide {
+    transition: opacity 400ms;
+    opacity: 0;
+}
+
+.hover-hide:hover {
+    opacity:0.75;
+} 
+
+.settings-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+/* w3 code: */
+/* The sidepanel menu */
+.sidepanel {
+  height: 0; /* Specify a height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  padding-bottom: 25px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+.sidepanel::-webkit-scrollbar {
+    display: none; /* for Chrome, Safari, and Opera */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .settings-button-close {
+  position: absolute;
+  top: 0;
+  left: 0px;
+  font-size: 36px;
+  margin-left: 0px;
+}  

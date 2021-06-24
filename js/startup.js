@@ -38,3 +38,6 @@ else
 {
     getWeather();
 }
+
+// Prevent clicks inside elements from changing particle colors
+document.querySelector(".container").children.forEach(function(e){ e.addEventListener('click', function(f){ f.stopPropagation(); }) })
