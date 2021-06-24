@@ -4,6 +4,7 @@ body {
     overflow: hidden;
     background-color: #231F20;
     position: relative;
+    font-family: Lucida Console;
 }
 
 .container{
@@ -131,7 +132,7 @@ body {
     position: absolute;
     padding: 10px;
     top: 36%;
-    left: 65%;
+    left: 58%;
     width: auto;
     height: auto;
     text-align: center;
