@@ -154,6 +154,10 @@ body {
     font-size: 40px;
     color: white;
 }
+.temp-unit{
+    font-size: 20px;
+    color: gray
+}
 
 img { max-width: 100% }
 
