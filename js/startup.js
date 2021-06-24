@@ -32,11 +32,78 @@ if (!localStorage.getItem('isKnown'))
             localStorage.setItem('long', 0.1278);
             getWeather();
         })
-
 }
 else
 {
     getWeather();
+}
+
+if (!localStorage.getItem('links'))
+{
+    const defaultLinks = [
+        {
+            "order" : 0,
+            "link" : "https://www.EthanHarv.com",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Icon.png"
+        },  
+        {
+            "order" : 1,
+            "link" : "https://www.github.com/EthanHarv",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Github.png"
+        },
+        {
+            "order" : 2,
+            "link" : "https://notion.so/",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Notion.png"
+        },
+        {
+            "order" : 3,
+            "link" : "https://www.xkcd.com/",
+            "disp" : "text",
+            "text" : "xkcd"
+        },
+        {
+            "order" : 4,
+            "link" : "https://old.reddit.com/",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Reddit.webp"
+        },
+        {
+            "order" : 5,
+            "link" : "https://news.ycombinator.com/",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/HN.png"
+        },
+        {
+            "order" : 6,
+            "link" : "https://www.youtube.com",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Youtube.png"
+        },
+        {
+            "order" : 7,
+            "link" : "https://www.google.com",
+            "disp" : "img",
+            "img-type" : "url",
+            "img-loc" : "./imgs/Google.png"
+        }
+    ]
+    localStorage.setItem('links', JSON.stringify(defaultLinks));
+
+    buildCircles();
+}
+else
+{
+    buildCircles();
 }
 
 // Prevent clicks inside elements from changing particle colors
