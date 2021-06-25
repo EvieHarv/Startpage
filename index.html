@@ -25,13 +25,13 @@
             <img src='./svg/settings-gear.svg'/>
         </div>
         <div id="settings-panel" class="sidepanel">
-            <a href="javascript:void(0)" class="settings-button-close">&times;<span style='color: red; font-size: 15px; padding: 8px 8px 8px 32px; position: absolute; white-space:nowrap;'>Heavily a WIP</span></a>
+            <a href="javascript:void(0)" class="settings-button-close panel-link">&times;</a>
             <!-- Main settings page -->
             <div class='settings-panel-main'>
-                <a href="#" class='settings-link-links'>Links</a>
-                <a href="#" class='settings-link-weather'>Weather</a>
-                <a href="#" class='settings-link-colors'>Colors</a>
-                <a href="https://www.ethanharv.com" style='color: green;'>EthanHarv.com</a>    
+                <a href="#" class='settings-link-links panel-link'>Links</a>
+                <a href="#" class='settings-link-weather panel-link'>Weather</a>
+                <a href="#" class='settings-link-colors panel-link'>Colors</a>
+                <a href="https://www.ethanharv.com" class='panel-link' style='color: green;'>EthanHarv.com</a>    
             </div>
             <!-- Links -->
             <div class='settings-panel-links panel' style='display: none;'>
@@ -47,13 +47,22 @@
             <!-- Weather -->
             <div class='settings-panel-weather panel' style='display: none;'>
                 <div class='settings-panel-weather-items'>
-
+                    <hr>
+                    <p style='width: auto; white-space:normal;'>Attempts to auto-set, but adblockers may prevent. Defaults to London.</p>
+                    Find yours <a href='https://www.latlong.net/' target="_blank">here</a>.
+                    <span style="font-size: x-small; vertical-align: middle;">(Requires a reload)</span><br>
+                    Lat: &nbsp;<input class='textbox' type='textbox' id='latitudeInput'></input><br>
+                    Long: <input class='textbox' type='textbox' id='longitudeInput'></input>
+                    <hr>
+                    Uses <a href='https://openweathermap.org/' target="_blank">OpenWeatherMap</a>.<br>
+                    API Key: <input class='textbox' type='textbox' id='apiKeyInput'></input><br>
+                    <p style='width: auto; white-space:normal;'>(I'll leave mine in as default until it becomes an issue)</p>
                 </div>
             </div>
             <!-- Colors -->
             <div class='settings-panel-colors panel' style='display: none;'>
                 <div class='settings-panel-colors-items'>
-
+                    Coming Soon.<br>
                 </div>
             </div>
         </div>

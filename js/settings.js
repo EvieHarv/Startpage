@@ -3,7 +3,7 @@ document.onkeydown = KeyPress;
 function KeyPress(e) {
     var evtobj = window.event? event : e;
     if (evtobj.keyCode == 83 && evtobj.ctrlKey) { e.preventDefault(); };
-}
+};
 
 // Open the main settings panel
 document.querySelector('.settings-button').addEventListener('click', function(e)
@@ -43,13 +43,13 @@ document.querySelector('.settings-link-links').addEventListener('click', functio
 // Transition to Weather page
 document.querySelector('.settings-link-weather').addEventListener('click', function(e)
 {
-    displayPanel('weather', 500, 450);
+    displayPanel('weather', 500, 425);
 });
 
 // Transition to Colors page
 document.querySelector('.settings-link-colors').addEventListener('click', function(e)
 {
-    displayPanel('colors', 500, 450);
+    displayPanel('colors', 250, 50);
 });
 
 function displayPanel(panel, width, height)
@@ -158,14 +158,18 @@ function buildSettingsPanels()
     //////// Weather ////////
     /////////////////////////
     const weatherPanel = document.querySelector('.settings-panel-weather-items');
-    weatherPanel.innerHTML = '';
+    $('#latitudeInput').val(localStorage.getItem('lat'));
+    $('#longitudeInput').val(localStorage.getItem('long'));
+    $('#apiKeyInput').val(localStorage.getItem('weatherApiKey'));
 
+    $('#latitudeInput').on('input', function(e) { localStorage.setItem('lat', e.target.value.trim()); });
+    $('#longitudeInput').on('input', function(e) { localStorage.setItem('long', e.target.value.trim()); });
+    $('#apiKeyInput').on('input', function(e) { localStorage.setItem('weatherApiKey', e.target.value.trim()); });
 
     /////////////////////////
     ///////// Color /////////
     /////////////////////////
     const colorPanel = document.querySelector('.settings-panel-colors-items');
-    colorPanel.innerHTML = '';
 };
 
 /////////////////////////////////

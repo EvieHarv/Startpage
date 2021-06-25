@@ -210,7 +210,7 @@ img { max-width: 100% }
 }
 
 /* The sidepanel links */
-.sidepanel a:not(.sorthandle) {
+.sidepanel .panel-link {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -316,6 +316,7 @@ form{
     outline: none;
     border-radius: 3px;
     border: 1px solid rgba(128, 128, 128, 0.05);
+    background-color: #151515;
     border-bottom: 1px solid white;
 }
 
