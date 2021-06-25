@@ -21,7 +21,14 @@ function buildCircles()
         var orbit = document.createElement("a");
         orbit.classList.add('circle-orbit');
         orbit.style.setProperty('--i', i);
-        orbit.href = props.link;
+        if (props.link.match(/^https?:\/\//))
+        {
+            orbit.href = props.link;
+        }
+        else
+        {
+            orbit.href = "https://" + props.link;
+        }
 
         var item = document.createElement("div");
         item.classList.add('circle-orbit');
@@ -35,7 +42,15 @@ function buildCircles()
         {
             // Display as img thumbnail
             var img = document.createElement("img");
-            img.src = props['dispText']
+            if (props['dispText'].match(/^https?:\/\//) || props['dispText'][0] == '.')
+            {
+                img.src = props['dispText'];
+            }
+            else
+            {
+                img.src = "https://" + props['dispText'];
+            }    
+            
             circle.appendChild(img);
         }
         else
