@@ -173,22 +173,19 @@ img { max-width: 100% }
 }
 
 
-.hover-hide {
-    transition: opacity 400ms;
-    opacity: 0;
-}
-
-.hover-hide:hover {
-    opacity:0.75;
-} 
-
 .settings-button {
     position: absolute;
     top: 10px;
     right: 10px;
     width: 30px;
     height: 30px;
+    transition: opacity 400ms;
+    opacity: .25;
 }
+
+.settings-button:hover {
+    opacity:0.75;
+} 
 
 /* w3 code: */
 /* The sidepanel menu */
@@ -196,7 +193,7 @@ img { max-width: 100% }
     height: 0; /* Specify a height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 100; /* Stay on top */
     top: 0;
     right: 0;
     background-color: #111; /* Black*/
@@ -213,13 +210,20 @@ img { max-width: 100% }
 }
 
 /* The sidepanel links */
-.sidepanel a {
+.sidepanel a:not(.sorthandle) {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
+}
+.sorthandle{
+    text-decoration: none !important;
+    color: gray;
+}
+.sorthandle:hover{
+    color: white;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -267,6 +271,32 @@ img { max-width: 100% }
     vertical-align: middle;
 }
 
+.link-item-delete{
+    opacity: 0;
+    position: absolute;
+    left: 10px;
+    color: red;
+    transition: opacity 100ms;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+.link-item-delete:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+
+.sortable-ghost .link-item-delete{
+    left: -28px;
+}
+.sortable-drag .link-item-delete{
+    left: -28px;
+}
+.sortable-chosen .link-item-delete{
+    left: -28px;
+}
+
 form{
     display: inline-block;
     font-size: 18px;
@@ -287,4 +317,24 @@ form{
     border-radius: 3px;
     border: 1px solid rgba(128, 128, 128, 0.05);
     border-bottom: 1px solid white;
+}
+
+.settings-panel-button{
+    vertical-align: middle;
+    font-family: Lucida Console;
+    width: auto;
+    height: 25px;
+    background-color: #31aa52;
+    border: 2px solid #31aa52;
+    border-radius: 3px;
+    transition: all 100ms;
+}
+.settings-panel-button:hover{
+    background-color: hsl(136, 90%, 43%);
+    border: 2px solid hsl(136, 90%, 43%);
+}
+.settings-panel-button:active{
+    background-color: hsl(136, 90%, 43%);
+    border: 2px solid hsl(136, 90%, 43%);
+    transform: translate(0px, 3px);
 }
