@@ -49,7 +49,16 @@ function buildCircles()
             else
             {
                 img.src = "https://" + props['dispText'];
-            }    
+            }
+
+            if (props['imgscale'])
+            {
+                img.style.setProperty("--s", props['imgscale']);
+            }
+            else
+            {
+                img.style.setProperty("--s", "1");
+            }
             
             circle.appendChild(img);
         }
