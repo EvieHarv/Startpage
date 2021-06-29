@@ -6,7 +6,11 @@ function showTime(){
 
     var time = ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
 
-    document.querySelector(".day").innerHTML = date.toDateString();
+    // Allow selection by only updating when needed
+    if (document.querySelector(".day").innerHTML !== date.toDateString())
+    {
+        document.querySelector(".day").innerHTML = date.toDateString();
+    }
     document.querySelector(".clock").innerHTML = time;
     
     setTimeout(showTime, 1000);
